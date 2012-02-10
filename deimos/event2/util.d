@@ -182,7 +182,7 @@ version (Win32) {
 
     Parameters and return values are as for socketpair()
 */
-int evutil_socketpair(int d, int type, int protocol, evutil_socket_t sv[2]);
+int evutil_socketpair(int d, int type, int protocol, ref evutil_socket_t sv[2]);
 /** Do platform-specific operations as needed to make a socket nonblocking.
 
     @param sock The socket to make nonblocking

@@ -201,7 +201,7 @@ import deimos.event2._d_util;
  * @see event_base_new(), event_base_free(), event_base_loop(),
  *   event_base_new_with_config()
  */
-struct event_base;
+public import deimos.event2.event_struct : event_base;
 
 /**
  * @struct event
@@ -256,7 +256,7 @@ struct event_base;
  *   event_get_callback(), event_get_callback_arg(),
  *   event_priority_set()
  */
-struct event;
+public import deimos.event2.event_struct : event;
 
 /**
  * Configuration for an event_base.
