@@ -201,7 +201,7 @@ import deimos.event2._d_util;
  * @see event_base_new(), event_base_free(), event_base_loop(),
  *   event_base_new_with_config()
  */
-public import deimos.event2.event_struct : event_base;
+public import deimos.event2.event_struct;
 
 /**
  * @struct event
@@ -256,7 +256,7 @@ public import deimos.event2.event_struct : event_base;
  *   event_get_callback(), event_get_callback_arg(),
  *   event_priority_set()
  */
-public import deimos.event2.event_struct : event;
+public import deimos.event2.event_struct;
 
 /**
  * Configuration for an event_base.
@@ -1150,8 +1150,8 @@ const(timeval)* event_base_init_common_timeout(event_base* base,
  @param free_fn A replacement for free.
  **/
 void event_set_mem_functions(
-	ExternC!(void function(size_t sz)) malloc_fn,
-	ExternC!(void function(void* ptr, size_t sz)) realloc_fn,
+	ExternC!(void* function(size_t sz)) malloc_fn,
+	ExternC!(void* function(void* ptr, size_t sz)) realloc_fn,
 	ExternC!(void function(void* ptr)) free_fn);
 /** This definition is present if Libevent was built with support for
     event_set_mem_functions() */

@@ -38,7 +38,7 @@ extern (C):
 nothrow:
 
 /* This is what openssl's SSL objects are underneath. */
-struct ssl_st;
+struct ssl_st {}
 
 /**
    The state of an SSL object to be used when creating a new
