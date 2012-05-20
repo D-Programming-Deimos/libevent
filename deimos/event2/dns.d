@@ -137,6 +137,7 @@ module deimos.event2.dns;
 extern (C):
 nothrow:
 
+public import deimos.event2.event_struct;
 /* For integer types. */
 public import deimos.event2.util;
 import deimos.event2._d_util;
@@ -198,7 +199,6 @@ enum DNS_NO_SEARCH = DNS_QUERY_NO_SEARCH;
 alias ExternC!(void function(int result, char type, int count, int ttl, void* addresses, void* arg)) evdns_callback_type;
 
 struct evdns_base;
-struct event_base;
 
 /**
   Initialize the asynchronous DNS library.
@@ -597,7 +597,7 @@ int evdns_server_request_respond(evdns_server_request* req, int err);
    Free a DNS request without sending back a reply.
 */
 int evdns_server_request_drop(evdns_server_request* req);
-struct sockaddr;
+
 /**
     Get the address that made a DNS request.
  */

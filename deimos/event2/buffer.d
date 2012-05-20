@@ -75,6 +75,7 @@ import core.stdc.stdarg;
 import core.sys.posix.sys.uio;
 import deimos.event2._d_util;
 public import deimos.event2.util;
+public import deimos.event2.event_struct;
 
 extern (C):
 nothrow:
@@ -804,7 +805,6 @@ int evbuffer_freeze(evbuffer* buf, int at_front);
  */
 int evbuffer_unfreeze(evbuffer* buf, int at_front);
 
-struct event_base;
 /**
    Force all the callbacks on an evbuffer to be run, not immediately after
    the evbuffer is altered, but instead from inside the event loop.
