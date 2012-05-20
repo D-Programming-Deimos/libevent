@@ -43,10 +43,7 @@ import core.stdc.stdint;
 version (Posix) {
   public import core.sys.posix.sys.time : timeval;
 } else version (Windows) {
-  struct timeval {
-    c_long tv_sec;
-    c_long tv_usec;
-  }
+  public import std.c.windows.winsock;
 } else static assert(false, "Don't know timeval on this platform.");
 version (Posix) {
   import core.sys.posix.sys.types;
@@ -312,7 +309,6 @@ int evutil_vsnprintf(char* buf, size_t buflen, const(char)* format, va_list ap);
 const(char)* evutil_inet_ntop(int af, const(void)* src, char* dst, size_t len);
 /** Replacement for inet_pton for platforms which lack it. */
 int evutil_inet_pton(int af, const(char)* src, void* dst);
-struct sockaddr;
 
 /** Parse an IPv4 or IPv6 address, with optional port, from a string.
 

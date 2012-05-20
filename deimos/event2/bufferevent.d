@@ -76,6 +76,8 @@ module deimos.event2.bufferevent;
 extern (C):
 nothrow:
 
+public import deimos.event2.event_struct;
+import deimos.event2.dns;
 /* For int types. */
 public import deimos.event2.util;
 import deimos.event2._d_util;
@@ -100,9 +102,7 @@ enum BEV_EVENT_CONNECTED = 0x80;	/**< connect operation finished. */
    @see event2/bufferevent.h
  */
 struct bufferevent;
-struct event_base;
 struct evbuffer;
-struct sockaddr;
 
 /**
    A read or write callback for a bufferevent.
@@ -191,7 +191,6 @@ bufferevent* bufferevent_socket_new(event_base* base, evutil_socket_t fd, int op
  */
 int bufferevent_socket_connect(bufferevent*, sockaddr*, int);
 
-struct evdns_base;
 /**
    Resolve the hostname 'hostname' and connect to it as with
    bufferevent_socket_connect().
