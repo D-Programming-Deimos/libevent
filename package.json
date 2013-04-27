@@ -1,0 +1,8 @@
+{
+	"name": "libevent",
+	"description": "Deimos bindings for libevent, a cross-platform asynchronous I/O library",
+	"homepage": "http://libevent.org/",
+	"importPaths": ["."],
+	"targetType": "sourceLibrary",
+	"libs-posix" : ["event", "event_pthreads"]
+}
