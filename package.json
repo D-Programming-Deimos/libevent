@@ -1,6 +1,7 @@
 {
 	"name": "libevent",
 	"description": "Deimos bindings for libevent, a cross-platform asynchronous I/O library",
+	"license": "BSD 3-clause",
 	"homepage": "http://libevent.org/",
 	"importPaths": ["."],
 	"targetType": "sourceLibrary",
