@@ -575,7 +575,7 @@ bufferevent_filter_new(bufferevent* underlying,
    @return 0 on success, -1 on failure.
  */
 int bufferevent_pair_new(event_base* base, int options,
-    ref bufferevent* pair[2]);
+    ref bufferevent*[2] pair);
 
 /**
    Given one bufferevent returned by bufferevent_pair_new(), returns the
