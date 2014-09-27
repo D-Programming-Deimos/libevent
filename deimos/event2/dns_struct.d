@@ -53,5 +53,5 @@ struct evdns_server_request {
 struct evdns_server_question {
 	int type;
 	int dns_question_class;
-	char name[1];
+	char[1] name;
 };
