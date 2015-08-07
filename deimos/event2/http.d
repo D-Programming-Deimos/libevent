@@ -29,13 +29,15 @@ module deimos.event2.http;
 /* For int types. */
 public import deimos.event2.util;
 import deimos.event2._d_util;
+import deimos.event2.event;
+import deimos.event2.buffer;
 
 extern (C):
 nothrow:
 
 /* In case we haven't included the right headers yet. */
-struct evbuffer;
-struct event_base;
+//struct evbuffer;
+//struct event_base;
 
 /** @file event2/http.h
  *
