@@ -44,7 +44,10 @@ version (Posix) {
   public import core.sys.posix.sys.time : timeval;
   public import core.sys.posix.sys.socket;
 } else version (Windows) {
-  public import std.c.windows.winsock;
+  static if (__VERSION__ >= 2070)
+    public import core.sys.windows.winsock2;
+  else
+    public import std.c.windows.winsock;
 } else static assert(false, "Don't know timeval on this platform.");
 version (Posix) {
   import core.sys.posix.sys.types;
@@ -56,7 +59,6 @@ version (Posix) {
 }
 
 version (Windows) {
-  import std.c.windows.winsock;
   extern(Windows) void WSASetLastError(int iError);
 } else {
   import core.sys.posix.sys.socket;
