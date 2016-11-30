@@ -40,7 +40,9 @@ nothrow:
 public import deimos.event2.util;
 import deimos.event2._d_util;
 
-struct evbuffer;
+static import deimos.event2._opaque_structs;
+
+alias evbuffer = deimos.event2._opaque_structs.evbuffer;
 
 /*
  * Marshaling tagged data - We assume that all tags are inserted in their
