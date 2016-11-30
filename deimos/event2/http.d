@@ -35,9 +35,10 @@ import deimos.event2.buffer;
 extern (C):
 nothrow:
 
-/* In case we haven't included the right headers yet. */
-//struct evbuffer;
-//struct event_base;
+static import deimos.event2._opaque_structs;
+
+alias evbuffer = deimos.event2._opaque_structs.evbuffer;
+alias event_base = deimos.event2._opaque_structs.event_base;
 
 /** @file event2/http.h
  *

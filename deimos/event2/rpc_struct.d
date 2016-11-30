@@ -57,9 +57,11 @@ enum EVRPC_STATUS_ERR_HOOKABORTED = 4;
 
 /* the structure below needs to be synchronized with evrpc_req_generic */
 
-struct evbuffer;
-struct evrpc_req_generic;
-struct evrpc_base;
+static import deimos.event2._opaque_structs;
+
+alias evbuffer = deimos.event2._opaque_structs.evbuffer;
+alias evrpc_req_generic = deimos.event2._opaque_structs.evrpc_req_generic;
+alias evrpc_base = deimos.event2._opaque_structs.evrpc_base;
 
 /* Encapsulates a request */
 struct evrpc {

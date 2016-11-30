@@ -151,10 +151,12 @@ auto EVTAG_ARRAY_LEN(string member, T)(T msg) {
 }
 
 
-struct event_base;
-struct evrpc_req_generic;
-struct evrpc_request_wrapper;
-struct evrpc;
+static import deimos.event2._opaque_structs;
+
+alias event_base = deimos.event2._opaque_structs.event_base;
+alias evrpc_req_generic = deimos.event2._opaque_structs.evrpc_req_generic;
+alias evrpc_request_wrapper = deimos.event2._opaque_structs.evrpc_request_wrapper;
+alias evrpc = deimos.event2._opaque_structs.evrpc;
 
 /** The type of a specific RPC Message
  *
@@ -164,9 +166,9 @@ template EVRPC_STRUCT(string rpcname) {
 	enum EVRPC_STRUCT = "evrpc_req__" ~ rpcname;
 }
 
-struct evhttp_request;
-struct evrpc_status;
-struct evrpc_hook_meta;
+alias evhttp_request = deimos.event2._opaque_structs.evhttp_request;
+alias evrpc_status = deimos.event2._opaque_structs.evrpc_status;
+alias evrpc_hook_meta = deimos.event2._opaque_structs.evrpc_hook_meta;
 
 /** Creates the definitions and prototypes for an RPC
  *
